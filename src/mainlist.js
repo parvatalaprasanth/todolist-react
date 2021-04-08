@@ -29,7 +29,10 @@ function Mainlist(){
         if (mod==="back"){
             newnav.todolist=true
         }
-        console.log(newnav);
+        if (mod==="mod"){
+            newnav.modifyitem=true
+        }
+        
         setnev(newnav);
     }
   
@@ -40,7 +43,7 @@ function Mainlist(){
         {nav.todolist === true && <Welcome onSubmit={(mod) => Modifyview(mod)}  currentstate={nav} /> }
         {nav.viewitem === true && <Viewitems onSubmit={(mod) => Modifyview(mod)}  currentstate={nav}/> }
         {nav.additem === true && <Additem onSubmit={(mod) => Modifyview(mod)}  currentstate={nav}/> }
-        {nav.modifyitem === true && <Modify/> }
+        {nav.modifyitem === true && <Modify onSubmit={(mod) => Modifyview(mod)}/> }
         </center>
         </div>
     )

@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function Modify(){
+function Modify(props){
 
   
     return(
@@ -18,7 +18,7 @@ function Modify(){
         </div>
         <div>
         <button>SAVE</button>
-        <button>BACK</button>
+        <button onClick={() => props.onSubmit("view")}>BACK</button>
         </div>
         </center>
         </div>
