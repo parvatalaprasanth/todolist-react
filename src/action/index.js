@@ -8,6 +8,18 @@ export const addlist=(info,content)=>{
     };
   };
 
+  export const modifylist=(previnfo,prevcontent,newinfo,newcontent)=>{
+    return{
+      type:"MODIFY",
+      payload:{
+        previnfo: previnfo,
+        prevcontent : prevcontent,
+        newinfo : newinfo,
+        newcontent :newcontent
+      }
+    };
+  };
+
   export const deletelist=(obj)=>{
     return{
       type:'DELETE',

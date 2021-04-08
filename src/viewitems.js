@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector,useDispatch} from 'react-redux';
-import { viewlist,deletelist } from './action/index';
+import { viewlist,deletelist,info,content } from './action/index';
 
 function Viewitems(props){
 
@@ -13,6 +13,12 @@ function Viewitems(props){
     function print(){
         console.log(Viewlist);
     }
+
+    function modify(x){
+        dispatch(info(x["info"]));
+        dispatch(content(x["content"]));
+        props.onSubmit("mod");
+    }
   
     return(
         <div>
@@ -24,7 +30,7 @@ function Viewitems(props){
                     <tr>
                         <td>{x["info"]}  </td>
                         <td> {x["content"]} </td>
-                        <td> <button onClick={() => props.onSubmit("mod")}>modify</button> </td>
+                        <td> <button onClick={() => modify(x)}>modify</button> </td>
                         <td> <button onClick={()=>dispatch(deletelist(x))}>delete</button> </td>
                     </tr>
                     ))}
